@@ -163,9 +163,11 @@
   }
   a.soc:hover{border-color:var(--brass);background:#171512;transform:translateY(-2px)}
   .soc .soc-top{display:flex;align-items:center;justify-content:space-between}
+  .soc{gap:26px}
   .soc h3{font-size:clamp(22px,2.6vw,30px)}
   .soc p{margin:6px 0 0;font-size:14px;color:var(--muted)}
   .soc svg{width:26px;height:26px;fill:var(--ink)}
+  .soc-handle{display:block;margin-top:10px;color:var(--brass);font-size:13px;letter-spacing:.04em}
   .soc[data-state="soon"]{opacity:.72}
   .soc[data-state="soon"]:hover{transform:none;border-color:var(--line);background:var(--panel)}
   .chip{font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line-strong);padding:4px 9px;color:var(--muted)}
@@ -448,7 +450,12 @@ const SOCIAL = {
       el.removeAttribute("data-state");
       const handle = url.replace(/\/+$/, "").split("/").pop();
       const handleEl = document.getElementById(handleId);
-      if (handleEl) handleEl.textContent = "@" + handle.replace(/^@/, "");
+      if (handleEl) {
+        const span = document.createElement("span");
+        span.className = "soc-handle";
+        span.textContent = "@" + handle.replace(/^@/, "");
+        handleEl.after(span);
+      }
       const chip = el.querySelector(".chip");
       if (chip) chip.remove();
     } else {

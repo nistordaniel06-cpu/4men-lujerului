@@ -75,6 +75,9 @@
   .btn--solid:hover{background:#d9b271;border-color:#d9b271;transform:translateY(-1px)}
   .btn--ghost:hover{background:rgba(244,241,234,.06)}
   .btn--block{width:100%}
+  .header-actions{display:flex;align-items:center;gap:22px}
+  .phone-link{font-size:14px;letter-spacing:.06em;color:#cfcbc3;border-bottom:1px solid transparent;padding-bottom:2px}
+  .phone-link:hover{color:var(--ink);border-color:var(--brass)}
 
   /* ---------- hero ---------- */
   .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
@@ -107,6 +110,7 @@
   .rating{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
   .rating strong{font-family:"Anton",Impact,sans-serif;font-size:38px;line-height:1;color:var(--brass)}
   .rating span{font-size:13px;color:var(--muted)}
+  .card-actions{display:grid;gap:10px;margin-top:22px}
 
   /* ---------- sections ---------- */
   section{padding:clamp(56px,8vw,104px) 0}
@@ -203,7 +207,10 @@
       <a href="#locatie">Locație</a>
       <a href="#social">Instagram</a>
     </nav>
-    <a class="btn btn--solid header-cta" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Programează-te</a>
+    <div class="header-actions">
+      <a class="phone-link" href="tel:+40728029916">0728 029 916</a>
+      <a class="btn btn--solid header-cta" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Programează-te</a>
+    </div>
   </div>
 </header>
 
@@ -220,7 +227,7 @@
           <a class="btn btn--solid" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Programează-te online</a>
           <a class="btn btn--ghost" href="#servicii">Vezi serviciile și prețurile</a>
         </div>
-        <p class="hero-note">Plata la salon · Programările se fac prin MERO</p>
+        <p class="hero-note">Plata la salon · Programări online prin MERO sau la telefon</p>
       </div>
 
       <aside class="info-card" aria-label="Informații rapide">
@@ -239,8 +246,9 @@
           <li><b>Tuns + barbă</b><span class="muted">de la 100 lei</span></li>
           <li><b>Aranjat barbă</b><span class="muted">de la 40 lei</span></li>
         </ul>
-        <div style="margin-top:22px">
+        <div class="card-actions">
           <a class="btn btn--solid btn--block" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Alege o oră</a>
+          <a class="btn btn--ghost btn--block" href="tel:+40728029916">Sună: 0728 029 916</a>
         </div>
       </aside>
     </div>
@@ -345,6 +353,7 @@
         <div class="loc-copy reveal">
           <p class="addr">Bulevardul Iuliu<br>Maniu 57, bl. OD16</p>
           <p>Sector 6, București — pe bulevard, aproape de metroul Lujerului (M3).</p>
+          <p>Telefon: <a href="tel:+40728029916" style="border-bottom:1px solid var(--brass)">0728 029 916</a></p>
           <div class="loc-links">
             <a class="btn btn--ghost btn--block" href="https://www.google.com/maps/dir/?api=1&destination=Bulevardul+Iuliu+Maniu+57,+Bucuresti" target="_blank" rel="noopener">Deschide în Google Maps</a>
             <a class="btn btn--solid btn--block" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Vezi orele libere</a>
@@ -401,7 +410,8 @@
   <div class="wrap foot-in">
     <div>
       <div class="brand" style="font-size:22px">4<span>MEN</span></div>
-      <p style="margin-top:10px">Bulevardul Iuliu Maniu 57, bl. OD16 · Sector 6, București</p>
+      <p style="margin-top:10px">Bulevardul Iuliu Maniu 57, bl. OD16 · Sector 6, București<br>
+      <a href="tel:+40728029916" style="color:var(--ink)">0728 029 916</a></p>
     </div>
     <div class="foot-links">
       <a href="#servicii">Servicii</a>
@@ -418,8 +428,8 @@
    LINKURI SOCIAL — pune aici adresele reale și dispar etichetele „soon”
    ------------------------------------------------------------------ */
 const SOCIAL = {
-  instagram: "",   // ex: "https://www.instagram.com/4men.lujerului"
-  facebook:  ""    // ex: "https://www.facebook.com/4men.lujerului"
+  instagram: "https://www.instagram.com/4men.studio/",
+  facebook:  "https://www.facebook.com/4menstudio"
 };
 
 (function () {
@@ -538,13 +548,18 @@ const SOCIAL = {
   },
   "areaServed": "București",
   "priceRange": "25–120 lei",
+  "telephone": "+40728029916",
   "openingHoursSpecification": [
     {"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"12:00","closes":"20:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"12:00","closes":"21:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"}
   ],
   "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.97","reviewCount":"797","bestRating":"5"},
-  "sameAs": ["https://mero.ro/p/4men"]
+  "sameAs": [
+    "https://mero.ro/p/4men",
+    "https://www.instagram.com/4men.studio/",
+    "https://www.facebook.com/4menstudio"
+  ]
 }
 </script>
 </body>

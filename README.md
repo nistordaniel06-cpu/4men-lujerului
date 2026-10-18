@@ -20,7 +20,8 @@ Toate datele sunt în `index.html`, marcate clar:
 
 | Ce | Unde |
 |---|---|
-| Instagram / Facebook | `const SOCIAL = { ... }` din `<script>` (la final) — pune URL-urile reale și eticheta „Link în curând” dispare automat |
+| Instagram ([@4men.studio](https://www.instagram.com/4men.studio/)) / Facebook ([4menstudio](https://www.facebook.com/4menstudio)) | `const SOCIAL = { ... }` din `<script>` (la final) |
+| Telefon (0728 029 916) | caută `tel:+40728029916` (header, card hero, secțiunea Locație, footer, schema.org) |
 | Program | obiectul `HOURS` din `<script>` **și** lista `<ul class="hours">` |
 | Prețuri / servicii | secțiunea `<!-- SERVICII -->` |
 | Adresă / hartă | secțiunea `<!-- LOCATIE -->` (linkul și `iframe`-ul) |

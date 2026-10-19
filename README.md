@@ -9,7 +9,7 @@ Site de prezentare (o singură pagină, static) pentru frizeria 4MEN din Bulevar
 - Recenzii reale (Google / MERO), program pe zile cu ziua curentă evidențiată
 - Locație + hartă Google embed și link de navigație
 - Blocuri Instagram / Facebook
-- Galerie „Din salon" din postările Instagram: grid editorial cu poză mare, lightbox cu tastatură (← → Esc) și contor
+- Galerie „Din salon" din postările Instagram: carusel care se schimbă automat (5,2 s), pauză la hover, săgeți, puncte, contor, logo 4MEN și lightbox cu tastatură (← → Esc)
 - Butoane de programare către MERO (`https://mero.ro/p/4men`)
 - Date structurate schema.org (`HairSalon`) pentru Google
 

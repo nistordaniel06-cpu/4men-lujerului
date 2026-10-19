@@ -185,33 +185,41 @@
   .chip{font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line-strong);padding:4px 9px;color:var(--muted)}
 
 
-  /* galerie — grid editorial, nu masonry */
+  /* galerie — carusel */
   .g-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
-  .g-head .g-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-  .g-stat{display:flex;align-items:baseline;gap:7px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .g-stat b{font-family:"Anton",Impact,sans-serif;font-size:20px;letter-spacing:.02em;color:var(--ink);font-weight:400}
-  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,14.5vw,215px);gap:12px;margin-top:30px}
-  .gtile{position:relative;display:block;padding:0;border:1px solid var(--line);background:var(--panel);overflow:hidden;cursor:zoom-in;min-width:0;min-height:0;text-align:left}
-  .gtile--feature{grid-column:span 2;grid-row:span 2}
-  .gtile--tall{grid-row:span 2}
-  .gtile img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);
-    transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s ease;filter:saturate(.88) contrast(1.03)}
-  .gtile:hover img,.gtile:focus-visible img{transform:scale(1.055);filter:saturate(1.02) contrast(1.05)}
-  .gtile::after{content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(6,6,7,.72) 100%);opacity:.55;transition:opacity .35s}
-  .gtile:hover::after,.gtile:focus-visible::after{opacity:.9}
-  .gtile-hint{position:absolute;left:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:7px;
-    padding:6px 10px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#f4f1ea;
-    background:rgba(9,9,10,.62);border:1px solid rgba(244,241,234,.28);backdrop-filter:blur(6px);
-    opacity:0;transform:translateY(5px);transition:opacity .3s,transform .3s}
-  .gtile:hover .gtile-hint,.gtile:focus-visible .gtile-hint{opacity:1;transform:none}
-  .gtile-hint svg{width:12px;height:12px;fill:currentColor}
-  .gtile-tag{position:absolute;top:12px;right:12px;z-index:2;width:28px;height:28px;display:grid;place-items:center;
-    border:1px solid rgba(244,241,234,.3);background:rgba(9,9,10,.55);backdrop-filter:blur(6px);
-    opacity:0;transform:translateY(-4px);transition:opacity .3s,transform .3s}
-  .gtile:hover .gtile-tag,.gtile:focus-visible .gtile-tag{opacity:1;transform:none}
-  .gtile-tag svg{width:14px;height:14px;fill:var(--ink)}
-  .gallery-foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:24px}
+  .g-brand{display:flex;align-items:center;gap:13px}
+  .g-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,161,90,.42);background:#0b0b0c}
+  .g-brand b{display:block;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:.02em}
+  .g-brand p{margin:2px 0 0;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .c-wrap{position:relative;margin-top:28px;border:1px solid var(--line);background:#0d0d0f;overflow:hidden}
+  .c-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+  .c-track::-webkit-scrollbar{display:none}
+  .g-slide{position:relative;flex:0 0 100%;scroll-snap-align:start;margin:0;padding:0;border:0;background:#0d0d0f;
+    cursor:zoom-in;aspect-ratio:16/9;max-height:min(62vh,540px);overflow:hidden}
+  .g-slide img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.015);
+    transition:transform 1.4s cubic-bezier(.2,.8,.2,1),filter .5s ease;filter:saturate(.92) contrast(1.03)}
+  .g-slide--fit img{object-fit:contain;background:#101012;transform:none}
+  .g-slide--fit{background:#101012}
+  .g-slide:hover img,.g-slide:focus-visible img{transform:scale(1.045);filter:saturate(1.02) contrast(1.04)}
+  .g-slide::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(6,6,7,.35) 0%,rgba(6,6,7,0) 38%,rgba(6,6,7,.82) 100%)}
+  .c-mark{position:absolute;top:16px;left:clamp(16px,2.4vw,24px);z-index:2;display:inline-flex;align-items:center;gap:9px;
+    font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#efe9dd;
+    text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .c-mark img{width:26px;height:26px;border-radius:50%;border:1px solid rgba(201,161,90,.5)}
+  .c-ui{display:flex;align-items:center;gap:14px;padding:13px clamp(14px,2.2vw,20px);border-top:1px solid var(--line)}
+  .c-dots{display:flex;align-items:center;gap:7px}
+  .c-dot{width:20px;height:3px;padding:0;border:0;background:rgba(244,241,234,.26);cursor:pointer;transition:background .3s,width .3s}
+  .c-dot[aria-current="true"]{background:var(--brass);width:32px}
+  .c-count{margin-left:auto;font-size:11px;letter-spacing:.18em;color:#cfcabf;font-variant-numeric:tabular-nums}
+  .c-nav{position:absolute;top:calc(50% - 26px);transform:translateY(-50%);z-index:4;width:42px;height:42px;
+    background:rgba(9,9,10,.62);backdrop-filter:blur(8px)}
+  .c-prev{left:12px}
+  .c-next{right:12px}
+  .c-bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--brass);z-index:5}
+  .c-bar.run{animation:cbar 5.2s linear forwards}
+  @keyframes cbar{from{width:0}to{width:100%}}
+  .gallery-foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:22px}
   .gallery-foot .muted{margin:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 
   /* lightbox + modal */
@@ -256,9 +264,9 @@
   @media (max-width:900px){
     .hero-in{grid-template-columns:1fr;align-items:start}
     .menu,.split,.loc-grid,.social,.quotes{grid-template-columns:1fr}
-    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:38vw;gap:10px}
-    .gtile--feature{grid-column:span 2;grid-row:span 2}
-    .gtile-hint{padding:5px 8px;font-size:9.5px}
+    .g-slide{aspect-ratio:4/5;max-height:none}
+      .c-nav{width:36px;height:36px}
+    .g-logo{width:38px;height:38px}
     .nav{display:none}
     .header-cta{padding:0 14px;font-size:11px;letter-spacing:.1em}
     .brand{font-size:23px}
@@ -458,45 +466,51 @@
     <div class="wrap">
       <div class="section-head g-head reveal">
         <div>
-          <p class="eyebrow">Instagram · @4men.studio</p>
+          <p class="eyebrow">Instagram</p>
           <h2 id="gal-title">Din salon</h2>
         </div>
-        <div class="g-meta">
-          <div class="g-stat"><b>107</b> postări</div>
-          <div class="g-stat"><b>3.102</b> urmăritori</div>
-          <a class="btn btn--ghost" href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">Deschide Instagram</a>
+        <div class="g-brand">
+          <img class="g-logo" src="assets/logo-4men.png" alt="Logo 4MEN" width="46" height="46" loading="lazy">
+          <div>
+            <b>@4men.studio</b>
+            <p>107 postări · 3.102 urmăritori</p>
+          </div>
         </div>
       </div>
 
-      <div class="gallery reveal" id="gallery">
-        <button class="gtile gtile--feature" type="button" data-caption="More than a haircut.">
-          <img src="assets/gallery/g2.jpg" alt="Detaliu de tundere cu mașina, în salonul 4MEN Lujerului" width="1000" height="1250" loading="lazy" decoding="async" style="object-position:50% 42%">
-          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
-          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
-        </button>
+      <div class="c-wrap reveal" id="carousel" role="group" aria-roledescription="carusel" aria-label="Poze din salon, se schimbă automat">
+        <div class="c-track" id="gallery">
+          <button class="gtile g-slide" type="button" data-caption="More than a haircut." aria-label="Deschide poza 1">
+            <img src="assets/gallery/g2.jpg" alt="Detaliu de tundere cu mașina, în salonul 4MEN Lujerului" width="1000" height="1250" decoding="async" style="object-position:50% 34%">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
+          <button class="gtile g-slide" type="button" data-caption="Sunt frizer. E o meserie ușoară." aria-label="Deschide poza 2">
+            <img src="assets/gallery/g3.jpg" alt="Frizer lucrând la scaun, în salonul 4MEN Lujerului" width="720" height="1280" decoding="async" style="object-position:50% 35%">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
+          <button class="gtile g-slide" type="button" data-caption="Kind of cool to know your barber." aria-label="Deschide poza 3">
+            <img src="assets/gallery/g1.jpg" alt="Portret cu tuns și barbă lucrate în salonul 4MEN Lujerului" width="1000" height="1000" decoding="async">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
+          <button class="gtile g-slide g-slide--fit" type="button" data-caption="Fresh fade de Halloween." aria-label="Deschide poza 4">
+            <img src="assets/gallery/g4.jpg" alt="Postare de Halloween 4MEN: Fresh fade" width="1000" height="1000" decoding="async">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
+        </div>
 
-        <button class="gtile gtile--tall" type="button" data-caption="Sunt frizer. E o meserie ușoară.">
-          <img src="assets/gallery/g3.jpg" alt="Frizer lucrând la scaun, în salonul 4MEN Lujerului" width="720" height="1280" loading="lazy" decoding="async" style="object-position:50% 35%">
-          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
-          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
-        </button>
+        <button class="icon-btn c-nav c-prev" id="c-prev" type="button" aria-label="Poza anterioară">&#8249;</button>
+        <button class="icon-btn c-nav c-next" id="c-next" type="button" aria-label="Poza următoare">&#8250;</button>
 
-        <button class="gtile" type="button" data-caption="Kind of cool to know your barber.">
-          <img src="assets/gallery/g1.jpg" alt="Portret cu tuns și barbă lucrate în salonul 4MEN Lujerului" width="1000" height="1000" loading="lazy" decoding="async">
-          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
-          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
-        </button>
-
-        <button class="gtile" type="button" data-caption="Fresh fade de Halloween.">
-          <img src="assets/gallery/g4.jpg" alt="Postare de Halloween 4MEN: Fresh fade" width="1000" height="1000" loading="lazy" decoding="async">
-          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
-          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
-        </button>
+        <div class="c-ui">
+          <div class="c-dots" id="c-dots" role="tablist" aria-label="Alege poza"></div>
+          <span class="c-count" id="c-count" aria-live="polite">1 / 4</span>
+        </div>
+        <span class="c-bar" id="c-bar" aria-hidden="true"></span>
       </div>
 
       <div class="gallery-foot reveal">
         <a class="btn btn--solid" href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">Vezi tot pe Instagram</a>
-        <p class="muted">Poze din postările salonului · actualizate manual</p>
+        <p class="muted">Se schimbă automat · pauză când treci cu mouse-ul</p>
       </div>
     </div>
   </section>
@@ -625,6 +639,73 @@ const SOCIAL = {
       el.setAttribute("aria-disabled", "true");
     }
   });
+
+  // --- carusel galerie ---
+  (function initCarousel() {
+    const wrap = document.getElementById("carousel");
+    const track = document.getElementById("gallery");
+    if (!wrap || !track) return;
+    const slides = Array.from(track.querySelectorAll(".g-slide"));
+    const dotsBox = document.getElementById("c-dots");
+    const countEl = document.getElementById("c-count");
+    const bar = document.getElementById("c-bar");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    let i = 0, timer = null;
+
+    const dots = slides.map((_, n) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "c-dot";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", "Poza " + (n + 1));
+      b.addEventListener("click", () => { go(n); start(); });
+      dotsBox.appendChild(b);
+      return b;
+    });
+
+    function paint() {
+      dots.forEach((d, n) => d.setAttribute("aria-current", String(n === i)));
+      countEl.textContent = (i + 1) + " / " + slides.length;
+    }
+    function go(n, smooth = true) {
+      i = (n + slides.length) % slides.length;
+      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: (smooth && !reduce.matches) ? "smooth" : "auto" });
+      paint();
+    }
+    function start() {
+      stop();
+      if (reduce.matches) return;
+      timer = setInterval(() => go(i + 1), 5200);
+      bar.classList.remove("run");
+      void bar.offsetWidth;
+      bar.classList.add("run");
+    }
+    function stop() {
+      clearInterval(timer); timer = null;
+      bar.classList.remove("run");
+    }
+
+    document.getElementById("c-prev").addEventListener("click", () => { go(i - 1); start(); });
+    document.getElementById("c-next").addEventListener("click", () => { go(i + 1); start(); });
+    wrap.addEventListener("pointerenter", stop);
+    wrap.addEventListener("pointerleave", start);
+    wrap.addEventListener("focusin", stop);
+    wrap.addEventListener("focusout", start);
+    document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+    reduce.addEventListener("change", () => { go(i, false); start(); });
+
+    let raf = 0;
+    track.addEventListener("scroll", () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const n = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
+        if (n !== i && n >= 0 && n < slides.length) { i = n; paint(); }
+      });
+    }, { passive: true });
+
+    paint();
+    start();
+  })();
 
   // --- galerie, lightbox și pop-up Instagram ---
   const tiles = Array.from(document.querySelectorAll("#gallery .gtile"));

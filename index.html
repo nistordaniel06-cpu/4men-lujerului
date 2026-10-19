@@ -184,6 +184,64 @@
   .soc[data-state="soon"]:hover{transform:none;border-color:var(--line);background:var(--panel)}
   .chip{font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line-strong);padding:4px 9px;color:var(--muted)}
 
+
+  /* galerie — grid editorial, nu masonry */
+  .g-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
+  .g-head .g-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .g-stat{display:flex;align-items:baseline;gap:7px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .g-stat b{font-family:"Anton",Impact,sans-serif;font-size:20px;letter-spacing:.02em;color:var(--ink);font-weight:400}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,14.5vw,215px);gap:12px;margin-top:30px}
+  .gtile{position:relative;display:block;padding:0;border:1px solid var(--line);background:var(--panel);overflow:hidden;cursor:zoom-in;min-width:0;min-height:0;text-align:left}
+  .gtile--feature{grid-column:span 2;grid-row:span 2}
+  .gtile--tall{grid-row:span 2}
+  .gtile img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);
+    transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s ease;filter:saturate(.88) contrast(1.03)}
+  .gtile:hover img,.gtile:focus-visible img{transform:scale(1.055);filter:saturate(1.02) contrast(1.05)}
+  .gtile::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(6,6,7,.72) 100%);opacity:.55;transition:opacity .35s}
+  .gtile:hover::after,.gtile:focus-visible::after{opacity:.9}
+  .gtile-hint{position:absolute;left:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;gap:7px;
+    padding:6px 10px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#f4f1ea;
+    background:rgba(9,9,10,.62);border:1px solid rgba(244,241,234,.28);backdrop-filter:blur(6px);
+    opacity:0;transform:translateY(5px);transition:opacity .3s,transform .3s}
+  .gtile:hover .gtile-hint,.gtile:focus-visible .gtile-hint{opacity:1;transform:none}
+  .gtile-hint svg{width:12px;height:12px;fill:currentColor}
+  .gtile-tag{position:absolute;top:12px;right:12px;z-index:2;width:28px;height:28px;display:grid;place-items:center;
+    border:1px solid rgba(244,241,234,.3);background:rgba(9,9,10,.55);backdrop-filter:blur(6px);
+    opacity:0;transform:translateY(-4px);transition:opacity .3s,transform .3s}
+  .gtile:hover .gtile-tag,.gtile:focus-visible .gtile-tag{opacity:1;transform:none}
+  .gtile-tag svg{width:14px;height:14px;fill:var(--ink)}
+  .gallery-foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:24px}
+  .gallery-foot .muted{margin:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+  /* lightbox + modal */
+  .overlay{position:fixed;inset:0;z-index:120;background:rgba(8,8,9,.95);display:flex;align-items:center;justify-content:center;padding:clamp(14px,4vw,48px)}
+  .overlay[hidden]{display:none}
+  .lb-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px;max-width:min(1000px,100%)}
+  .lb-fig img{max-width:100%;max-height:74vh;border:1px solid rgba(244,241,234,.16)}
+  .lb-fig figcaption{font-size:14px;color:#cdc8c0;text-align:center;max-width:64ch}
+  .icon-btn{width:46px;height:46px;display:grid;place-items:center;background:rgba(20,20,22,.92);border:1px solid var(--line-strong);color:var(--ink);cursor:pointer;font-size:20px;line-height:1;padding:0}
+  .icon-btn:hover{border-color:var(--brass);color:var(--brass)}
+  .lb-close{position:absolute;top:clamp(12px,3vw,26px);right:clamp(12px,3vw,26px)}
+  .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+  .lb-prev{left:clamp(8px,2vw,24px)}
+  .lb-next{right:clamp(8px,2vw,24px)}
+  .lb-count{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;color:var(--muted)}
+
+  .modal-card{width:min(860px,100%);max-height:88vh;overflow:auto;background:#0f0f11;border:1px solid var(--line)}
+  .ig-head{display:flex;align-items:center;gap:16px;padding:20px 20px 16px;border-bottom:1px solid var(--line)}
+  .ig-avatar{width:62px;height:62px;flex:0 0 auto;border-radius:50%;background:conic-gradient(from 210deg,#c9a15a,#7d6030,#c9a15a);padding:2px}
+  .ig-avatar span{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:#0f0f11;font-family:"Anton",Impact,sans-serif;font-size:20px}
+  .ig-head h3{font-family:"Inter Tight",sans-serif;text-transform:none;font-size:17px;font-weight:500;letter-spacing:0;margin:0}
+  .ig-head p{margin:3px 0 0;font-size:13px;color:var(--muted)}
+  .ig-head p a{color:var(--brass)}
+  .ig-head .icon-btn{margin-left:auto;flex:0 0 auto}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:6px}
+  .ig-grid button{padding:0;border:0;background:none;cursor:zoom-in;line-height:0}
+  .ig-grid img{width:100%;aspect-ratio:1;object-fit:cover;filter:saturate(.95);transition:opacity .2s}
+  .ig-grid button:hover img{opacity:.8}
+  .ig-foot{display:flex;justify-content:flex-end;padding:14px 18px 18px}
+
   /* footer */
   footer{border-top:1px solid var(--line);padding:44px 0 34px;background:var(--bg-2)}
   .foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
@@ -198,10 +256,22 @@
   @media (max-width:900px){
     .hero-in{grid-template-columns:1fr;align-items:start}
     .menu,.split,.loc-grid,.social,.quotes{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:38vw;gap:10px}
+    .gtile--feature{grid-column:span 2;grid-row:span 2}
+    .gtile-hint{padding:5px 8px;font-size:9.5px}
     .nav{display:none}
     .header-cta{padding:0 14px;font-size:11px;letter-spacing:.1em}
     .brand{font-size:23px}
     .map{min-height:300px}
+  }
+  @media (max-width:560px){
+    .header-in{gap:10px;height:66px}
+    .phone-link{display:none}
+    .header-cta{padding:0 13px;font-size:10px;letter-spacing:.07em;white-space:nowrap}
+    .brand{font-size:21px}
+    .g-head{gap:14px}
+    .g-head .g-meta{gap:12px 16px}
+    .g-stat b{font-size:17px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -211,6 +281,8 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-ig" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.6-2.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></symbol></svg>
+
 
 <header class="site-header">
   <div class="wrap header-in">
@@ -381,6 +453,54 @@
     </div>
   </section>
 
+  <!-- GALERIE -->
+  <section id="galerie" aria-labelledby="gal-title">
+    <div class="wrap">
+      <div class="section-head g-head reveal">
+        <div>
+          <p class="eyebrow">Instagram · @4men.studio</p>
+          <h2 id="gal-title">Din salon</h2>
+        </div>
+        <div class="g-meta">
+          <div class="g-stat"><b>107</b> postări</div>
+          <div class="g-stat"><b>3.102</b> urmăritori</div>
+          <a class="btn btn--ghost" href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">Deschide Instagram</a>
+        </div>
+      </div>
+
+      <div class="gallery reveal" id="gallery">
+        <button class="gtile gtile--feature" type="button" data-caption="More than a haircut.">
+          <img src="assets/gallery/g2.jpg" alt="Detaliu de tundere cu mașina, în salonul 4MEN Lujerului" width="1000" height="1250" loading="lazy" decoding="async" style="object-position:50% 42%">
+          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
+          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
+        </button>
+
+        <button class="gtile gtile--tall" type="button" data-caption="Sunt frizer. E o meserie ușoară.">
+          <img src="assets/gallery/g3.jpg" alt="Frizer lucrând la scaun, în salonul 4MEN Lujerului" width="720" height="1280" loading="lazy" decoding="async" style="object-position:50% 35%">
+          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
+          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
+        </button>
+
+        <button class="gtile" type="button" data-caption="Kind of cool to know your barber.">
+          <img src="assets/gallery/g1.jpg" alt="Portret cu tuns și barbă lucrate în salonul 4MEN Lujerului" width="1000" height="1000" loading="lazy" decoding="async">
+          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
+          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
+        </button>
+
+        <button class="gtile" type="button" data-caption="Fresh fade de Halloween.">
+          <img src="assets/gallery/g4.jpg" alt="Postare de Halloween 4MEN: Fresh fade" width="1000" height="1000" loading="lazy" decoding="async">
+          <span class="gtile-tag"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>
+          <span class="gtile-hint"><svg aria-hidden="true"><use href="#i-ig"/></svg>Vezi postarea</span>
+        </button>
+      </div>
+
+      <div class="gallery-foot reveal">
+        <a class="btn btn--solid" href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">Vezi tot pe Instagram</a>
+        <p class="muted">Poze din postările salonului · actualizate manual</p>
+      </div>
+    </div>
+  </section>
+
   <!-- SOCIAL -->
   <section id="social" aria-labelledby="social-title">
     <div class="wrap">
@@ -437,6 +557,36 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="overlay" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Galerie foto 4MEN">
+  <button class="icon-btn lb-close" id="lb-close" type="button" aria-label="Închide">&#10005;</button>
+  <button class="icon-btn lb-prev" id="lb-prev" type="button" aria-label="Poza anterioară">&#8249;</button>
+  <button class="icon-btn lb-next" id="lb-next" type="button" aria-label="Poza următoare">&#8250;</button>
+  <figure class="lb-fig">
+    <img id="lb-img" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+  <span class="lb-count" id="lb-count"></span>
+</div>
+
+<!-- POP-UP INSTAGRAM -->
+<div class="overlay" id="ig-modal" hidden role="dialog" aria-modal="true" aria-label="Instagram 4MEN">
+  <div class="modal-card">
+    <div class="ig-head">
+      <div class="ig-avatar" aria-hidden="true"><span>4M</span></div>
+      <div>
+        <h3>4MEN</h3>
+        <p><a href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">@4men.studio</a> · 3.102 urmăritori · 107 postări</p>
+      </div>
+      <button class="icon-btn" id="ig-close" type="button" aria-label="Închide">&#10005;</button>
+    </div>
+    <div class="ig-grid" id="ig-grid"></div>
+    <div class="ig-foot">
+      <a class="btn btn--solid" href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">Deschide pe Instagram</a>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ------------------------------------------------------------------
    LINKURI SOCIAL — pune aici adresele reale și dispar etichetele „soon”
@@ -475,6 +625,86 @@ const SOCIAL = {
       el.setAttribute("aria-disabled", "true");
     }
   });
+
+  // --- galerie, lightbox și pop-up Instagram ---
+  const tiles = Array.from(document.querySelectorAll("#gallery .gtile"));
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lb-img");
+  const lbCap = document.getElementById("lb-cap");
+  const lbCount = document.getElementById("lb-count");
+  const igModal = document.getElementById("ig-modal");
+  let idx = 0;
+
+  function renderLb(i) {
+    if (!tiles.length) return;
+    idx = (i + tiles.length) % tiles.length;
+    const img = tiles[idx].querySelector("img");
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = tiles[idx].dataset.caption || "";
+    lbCount.textContent = (idx + 1) + " / " + tiles.length;
+  }
+  function openLb(i) {
+    renderLb(i);
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.getElementById("lb-close").focus();
+  }
+  function closeLb() {
+    lb.hidden = true;
+    document.body.style.overflow = "";
+  }
+  function openIg() {
+    igModal.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.getElementById("ig-close").focus();
+  }
+  function closeIg() {
+    igModal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  if (tiles.length) {
+    tiles.forEach((t, i) => t.addEventListener("click", () => openLb(i)));
+
+    // mini-grila din pop-up, construită din aceleași poze
+    const igGrid = document.getElementById("ig-grid");
+    tiles.forEach((t, i) => {
+      const src = t.querySelector("img");
+      const b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", "Deschide poza " + (i + 1));
+      const im = document.createElement("img");
+      im.src = src.getAttribute("src");
+      im.alt = "";
+      im.loading = "lazy";
+      im.width = 300;
+      im.height = 300;
+      b.appendChild(im);
+      b.addEventListener("click", () => { closeIg(); openLb(i); });
+      igGrid.appendChild(b);
+    });
+
+    document.getElementById("lb-close").addEventListener("click", closeLb);
+    document.getElementById("lb-prev").addEventListener("click", () => renderLb(idx - 1));
+    document.getElementById("lb-next").addEventListener("click", () => renderLb(idx + 1));
+    lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
+
+    const igCard = document.getElementById("soc-instagram");
+    if (igCard) igCard.addEventListener("click", (e) => { e.preventDefault(); openIg(); });
+    document.getElementById("ig-close").addEventListener("click", closeIg);
+    igModal.addEventListener("click", (e) => { if (e.target === igModal) closeIg(); });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lb.hidden) {
+        if (e.key === "Escape") closeLb();
+        if (e.key === "ArrowLeft") renderLb(idx - 1);
+        if (e.key === "ArrowRight") renderLb(idx + 1);
+      } else if (!igModal.hidden && e.key === "Escape") {
+        closeIg();
+      }
+    });
+  }
 
   // --- program (ora României) ---
   const HOURS = {

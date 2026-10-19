@@ -9,6 +9,7 @@ Site de prezentare (o singură pagină, static) pentru frizeria 4MEN din Bulevar
 - Recenzii reale (Google / MERO), program pe zile cu ziua curentă evidențiată
 - Locație + hartă Google embed și link de navigație
 - Blocuri Instagram / Facebook
+- Galerie „Din salon" din postările Instagram: grid editorial cu poză mare, lightbox cu tastatură (← → Esc) și contor
 - Butoane de programare către MERO (`https://mero.ro/p/4men`)
 - Date structurate schema.org (`HairSalon`) pentru Google
 
@@ -21,6 +22,7 @@ Toate datele sunt în `index.html`, marcate clar:
 | Ce | Unde |
 |---|---|
 | Instagram ([@4men.studio](https://www.instagram.com/4men.studio/)) / Facebook ([4menstudio](https://www.facebook.com/4menstudio)) | `const SOCIAL = { ... }` din `<script>` (la final) |
+| Poze galerie | `assets/gallery/g1..g4.jpg` + blocul `<!-- GALERIE -->` (originalele sunt în `assets/source/instagram/`) |
 | Telefon (0728 029 916) | caută `tel:+40728029916` (header, card hero, secțiunea Locație, footer, schema.org) |
 | Program | obiectul `HOURS` din `<script>` **și** lista `<ul class="hours">` |
 | Prețuri / servicii | secțiunea `<!-- SERVICII -->` |

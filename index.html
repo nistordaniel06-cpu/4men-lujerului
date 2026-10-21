@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>4MEN Lujerului — Frizerie & barber shop în București</title>
-<meta name="description" content="4MEN Lujerului — frizerie și barber shop pe Bulevardul Iuliu Maniu 57, București. Tuns, barbă și aranjat, cu programare online. 4,9★ din 797 de recenzii.">
+<meta name="description" content="4MEN Lujerului — frizerie și barber shop pe Bulevardul Iuliu Maniu 57, București. Tuns, barbă și aranjat, cu programare online. Programări prin MERO.">
 <meta name="theme-color" content="#0b0b0c">
 <meta property="og:title" content="4MEN Lujerului — Frizerie & barber shop">
 <meta property="og:description" content="Tuns, barbă și aranjat la Lujerului. Bulevardul Iuliu Maniu 57, București. Programare online.">
@@ -286,9 +286,57 @@
     .reveal{opacity:1;transform:none;transition:none}
     *{animation:none!important}
   }
+
+  /* Modern 4MEN presentation: compact type, real photography, mobile booking. */
+  :root { --bg:#101111; --bg-2:#171818; --panel:#1c1d1d; --ink:#f5f2ec; --muted:#b6b3ac; --pad:clamp(20px,5vw,56px); }
+  body{font-weight:400;font-family:"Inter Tight",system-ui,sans-serif}
+  h1,h2,h3{font-family:"Inter Tight",system-ui,sans-serif;text-transform:none;font-weight:500;letter-spacing:-.045em;line-height:1.08}
+  h1{font-size:clamp(44px,6.5vw,84px)}
+  h1 em{color:#d3b780;display:inline}
+  .brand{font-family:"Anton",sans-serif}.brand small{display:block;letter-spacing:.12em}
+  .site-header{background:rgba(16,17,17,.95)}
+  .header-in{height:82px}.nav{font-size:13px;text-transform:none;letter-spacing:0;gap:24px}
+  .btn{border-radius:12px;min-height:50px;text-transform:none;font-size:15px;letter-spacing:0;font-weight:500;padding:12px 22px;line-height:1.35}
+  .btn--solid{background:#d3b780;border-color:#d3b780;color:#171410}
+  .hero::before{display:none}.hero-in{grid-template-columns:1fr 1fr;align-items:center;gap:56px;padding-block:56px}
+  .hero p.lead{font-size:18px;line-height:1.65;max-width:36ch;margin:24px 0 28px}
+  .hero-photo{margin:0;position:relative;border-radius:20px;overflow:hidden;background:var(--panel)}
+  .hero-photo>img{width:100%;height:530px;object-fit:cover;object-position:50% 34%}
+  .hero-photo figcaption{position:absolute;bottom:0;left:0;right:0;padding:40px 24px 22px;background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;justify-content:space-between;gap:12px;font-size:12px;letter-spacing:.04em;color:white}
+  .hero-note{font-size:13px}.hero-status{margin-top:28px;padding-top:22px;border-top:1px solid var(--line)}
+  .status{text-transform:none;letter-spacing:0;font-size:14px}.status-sub{font-size:13px;margin:8px 0 0}
+  section{padding:72px 0;scroll-margin-top:110px}.section-head{margin-bottom:32px}.section-head h2,#program-title{font-size:clamp(32px,4vw,48px)!important}
+  .eyebrow{font-size:11px;letter-spacing:.14em}.eyebrow::before{display:none}
+  .menu-item{padding:24px 0;gap:8px 18px}.menu-item .price{font-family:inherit;font-size:18px;font-weight:500;color:var(--ink)}
+  .menu-item h3{font-family:inherit;font-size:17px}.menu-item .meta{font-size:14px}.book-bar{border-radius:16px}
+  .c-wrap{border:0;border-radius:16px}.c-track{gap:16px}.g-slide{flex-basis:calc((100% - 32px)/3);aspect-ratio:4/5;max-height:420px;border-radius:14px}.g-slide img{transform:none}.g-slide::after{background:none}.c-mark{display:none}.c-ui,.c-bar{display:none}.c-nav{display:grid;position:static;transform:none;width:46px;height:46px;border-radius:50%;margin-top:16px}.c-prev{float:left}.c-next{float:right}.c-wrap::after{content:"";display:block;clear:both}
+  .gallery-foot{justify-content:space-between}.gallery-foot .muted{font-size:13px;letter-spacing:0;text-transform:none}
+  .team-layout{display:grid;grid-template-columns:.85fr 1fr;gap:80px;align-items:center}.team-layout>img{width:100%;height:440px;object-fit:cover;object-position:50% 35%;border-radius:18px}.team-layout h2{font-size:clamp(36px,5vw,60px)}.team-layout p.muted{max-width:38ch;margin:24px 0 30px}
+  .quotes p{font-size:19px}.quotes cite{letter-spacing:.04em;text-transform:none}.text-link{display:block;color:var(--ink);text-decoration:underline;text-underline-offset:4px;margin-top:10px}
+  .addr{font-family:inherit;font-weight:500;text-transform:none;letter-spacing:-.025em}.map,.soc{border-radius:16px}.soc{min-height:150px;padding:24px}.soc h3{font-size:26px;letter-spacing:-.02em}
+  .mobile-nav,.mobile-booking{display:none}.skip-link{position:fixed;top:-100px;left:20px;z-index:200;background:var(--ink);color:var(--bg);padding:12px}.skip-link:focus{top:10px}
+  .reveal{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .header-in{height:68px}.header-actions{gap:12px}.phone-link{display:none}.header-cta{font-size:14px;padding:10px 16px;min-height:44px}
+    .mobile-nav{display:flex;justify-content:space-around;border-top:1px solid var(--line);padding:0 12px}.mobile-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:0 8px;color:var(--muted);font-size:13px}
+    .hero-in{grid-template-columns:1fr;gap:28px;padding-block:36px}.hero-photo{order:-1}.hero-photo>img{height:300px}.hero-photo figcaption{font-size:11px;padding:28px 18px 16px}
+    h1{font-size:clamp(44px,8vw,68px)}.hero p.lead{font-size:16px;margin:18px 0 24px;max-width:45ch}.hero-status{margin-top:22px}.hero-note{margin-top:16px}
+    .hero-actions .btn{flex:1;white-space:nowrap}.hero-actions{gap:8px}.hero-actions .btn--ghost{background:transparent}
+    section{padding:48px 0;scroll-margin-top:132px}.section-head{gap:16px;margin-bottom:24px}
+    .g-slide{flex-basis:84%;aspect-ratio:4/5;max-height:480px}.c-track{gap:12px}.gallery-foot .btn{font-size:14px}.gallery-foot{gap:14px}.g-brand{display:none}
+    .menu-item{grid-template-columns:minmax(0,1fr) auto}.menu-item h3{font-size:16px}.menu-item .price{font-size:16px}.book-bar{padding:20px}.book-bar .btn{width:100%}
+    .team-layout{grid-template-columns:1fr;gap:28px}.team-layout>img{height:320px}.team-layout h2{font-size:40px}
+    .social{gap:12px}.soc{min-height:130px}.foot-links{flex-wrap:wrap;gap:16px}.foot-links a{min-height:44px;display:flex;align-items:center}
+    body{padding-bottom:calc(86px + env(safe-area-inset-bottom))}.mobile-booking{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;gap:12px;padding:12px 20px calc(12px + env(safe-area-inset-bottom));background:rgba(16,17,17,.97);border-top:1px solid var(--line);backdrop-filter:blur(16px)}.mobile-booking .btn{flex:1}.mobile-call{display:flex;align-items:center;justify-content:center;min-width:64px;font-size:15px}
+  }
+  @media(max-width:374px){.brand small{display:none}.hero-actions{flex-direction:column}.hero-photo>img{height:240px}.header-cta{padding:10px 12px}.menu-item{gap:8px 12px}.menu-item .price{font-size:15px}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#top">Sari la conținut</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-ig" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5.6-2.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></symbol></svg>
 
 
@@ -297,15 +345,15 @@
     <a class="brand" href="#top" aria-label="4MEN Lujerului — acasă">4<span>MEN</span><small>Lujerului</small></a>
     <nav class="nav" aria-label="Navigare principală">
       <a href="#servicii">Servicii</a>
-      <a href="#program">Program</a>
+      <a href="#echipa">Echipă</a>
       <a href="#locatie">Locație</a>
-      <a href="#social">Instagram</a>
     </nav>
     <div class="header-actions">
       <a class="phone-link" href="tel:+40728029916">0728 029 916</a>
       <a class="btn btn--solid header-cta" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Programează-te</a>
     </div>
   </div>
+  <nav class="mobile-nav" aria-label="Navigare pe mobil"><a href="#servicii">Servicii</a><a href="#galerie">Galerie</a><a href="#echipa">Echipă</a><a href="#locatie">Locație</a></nav>
 </header>
 
 <main id="top">
@@ -314,37 +362,75 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-in">
       <div>
-        <p class="eyebrow">Frizerie &amp; barber shop · București</p>
-        <h1 id="hero-title">4MEN<em>Lujerului</em></h1>
-        <p class="lead">Tuns, barbă și aranjat, făcute cu răbdare. Ne găsești pe Bulevardul Iuliu Maniu 57, la câteva minute de metroul Lujerului — cu programare online, ca să nu aștepți.</p>
+        <p class="eyebrow">4MEN Lujerului · Barber shop</p>
+        <h1 id="hero-title">Stilul tău.<br><em>Pe mâini bune.</em></h1>
+        <p class="lead">Tuns, barbă și atenție la detalii. Te așteptăm la 4MEN Lujerului, la câteva minute de metrou.</p>
         <div class="hero-actions">
           <a class="btn btn--solid" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Programează-te online</a>
-          <a class="btn btn--ghost" href="#servicii">Vezi serviciile și prețurile</a>
+          <a class="btn btn--ghost" href="#servicii">Servicii și prețuri</a>
         </div>
-        <p class="hero-note">Plata la salon · Programări online prin MERO sau la telefon</p>
+        <p class="hero-note">Programări prin MERO · Plata la salon</p>
+        <div class="hero-status"><div class="status" id="status" data-open="false"><span class="dot" aria-hidden="true"></span><span id="status-text">Vezi programul de mai jos</span></div><p id="status-sub" class="status-sub">Bulevardul Iuliu Maniu 57</p></div>
       </div>
 
-      <aside class="info-card" aria-label="Informații rapide">
-        <div class="status" id="status" data-open="false">
-          <span class="dot" aria-hidden="true"></span><span id="status-text">Verific programul…</span>
-        </div>
-        <p class="status-sub" id="status-sub">Bulevardul Iuliu Maniu 57, Sector 6</p>
+      <figure class="hero-photo">
+        <img src="assets/gallery/g2.jpg" alt="Detaliu de tundere în salonul 4MEN" width="1000" height="1250" fetchpriority="high">
+        <figcaption><span>4MEN STUDIO</span><span>Lujerului, București</span></figcaption>
+      </figure>
+    </div>
+  </section>
 
-        <div class="rating">
-          <strong>4,9</strong>
-          <span>din 797 de recenzii<br>pe MERO</span>
+  <!-- GALERIE -->
+  <section id="galerie" aria-labelledby="gal-title">
+    <div class="wrap">
+      <div class="section-head g-head reveal">
+        <div>
+          <p class="eyebrow">Instagram</p>
+          <h2 id="gal-title">Din salon</h2>
+        </div>
+        <div class="g-brand">
+          <img class="g-logo" src="assets/logo-4men.png" alt="Logo 4MEN" width="46" height="46" loading="lazy">
+          <div>
+            <b>@4men.studio</b>
+            <p>Lucrări și atmosferă</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-wrap reveal" id="carousel" role="group" aria-roledescription="carusel" aria-label="Fotografii din salon">
+        <div class="c-track" id="gallery">
+          <button class="gtile g-slide" type="button" data-caption="More than a haircut." aria-label="Deschide poza 1">
+            <img loading="lazy" src="assets/gallery/g2.jpg" alt="Detaliu de tundere cu mașina, în salonul 4MEN Lujerului" width="1000" height="1250" decoding="async" style="object-position:50% 34%">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
+          <button class="gtile g-slide" type="button" data-caption="Sunt frizer. E o meserie ușoară." aria-label="Deschide poza 2">
+            <img loading="lazy" src="assets/gallery/g3.jpg" alt="Frizer lucrând la scaun, în salonul 4MEN Lujerului" width="720" height="1280" decoding="async" style="object-position:50% 35%">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
+          <button class="gtile g-slide" type="button" data-caption="Kind of cool to know your barber." aria-label="Deschide poza 3">
+            <img loading="lazy" src="assets/gallery/g1.jpg" alt="Portret cu tuns și barbă lucrate în salonul 4MEN Lujerului" width="1000" height="1000" decoding="async">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
+          <button class="gtile g-slide g-slide--fit" type="button" data-caption="Fresh fade de Halloween." aria-label="Deschide poza 4">
+            <img loading="lazy" src="assets/gallery/g4.jpg" alt="Postare de Halloween 4MEN: Fresh fade" width="1000" height="1000" decoding="async">
+            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
+          </button>
         </div>
 
-        <ul class="info-list">
-          <li><b>Tuns</b><span class="muted">de la 80 lei</span></li>
-          <li><b>Tuns + barbă</b><span class="muted">de la 100 lei</span></li>
-          <li><b>Aranjat barbă</b><span class="muted">de la 40 lei</span></li>
-        </ul>
-        <div class="card-actions">
-          <a class="btn btn--solid btn--block" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Alege o oră</a>
-          <a class="btn btn--ghost btn--block" href="tel:+40728029916">Sună: 0728 029 916</a>
+        <button class="icon-btn c-nav c-prev" id="c-prev" type="button" aria-label="Poza anterioară">&#8249;</button>
+        <button class="icon-btn c-nav c-next" id="c-next" type="button" aria-label="Poza următoare">&#8250;</button>
+
+        <div class="c-ui">
+          <div class="c-dots" id="c-dots"></div>
+          <span class="c-count" id="c-count" aria-live="polite">1 / 4</span>
         </div>
-      </aside>
+        <span class="c-bar" id="c-bar" aria-hidden="true"></span>
+      </div>
+
+      <div class="gallery-foot reveal">
+        <a class="btn btn--solid" href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">Vezi tot pe Instagram</a>
+        <p class="muted">Glisează pentru mai multe fotografii</p>
+      </div>
     </div>
   </section>
 
@@ -391,6 +477,10 @@
 
   <hr class="rule">
 
+  <section id="echipa" aria-labelledby="team-title"><div class="wrap team-layout">
+    <img loading="lazy" src="assets/gallery/g3.jpg" alt="Frizer 4MEN lucrând la scaun" width="720" height="1280">
+    <div><p class="eyebrow">Oameni, înainte de toate</p><h2 id="team-title">Găsește-ți<br>frizerul.</h2><p class="muted">O tunsoare începe cu o conversație. Spune-ne ce îți dorești, iar de detalii ne ocupăm noi.</p><a class="btn btn--solid" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Vezi echipa pe MERO <span aria-hidden="true">↗</span></a></div>
+  </div></section>
   <!-- RECENZII -->
   <section id="recenzii" aria-labelledby="rec-title">
     <div class="wrap">
@@ -399,7 +489,7 @@
           <p class="eyebrow">Recenzii</p>
           <h2 id="rec-title">Ce spun clienții</h2>
         </div>
-        <p>4,7 din 5 pe Google (207 evaluări) și 4,97 pe MERO (797 evaluări).</p>
+        <p>Experiențe împărtășite de clienții noștri. <a class="text-link" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Vezi recenziile actuale pe MERO ↗</a></p>
       </div>
       <div class="quotes reveal">
         <blockquote>
@@ -461,60 +551,6 @@
     </div>
   </section>
 
-  <!-- GALERIE -->
-  <section id="galerie" aria-labelledby="gal-title">
-    <div class="wrap">
-      <div class="section-head g-head reveal">
-        <div>
-          <p class="eyebrow">Instagram</p>
-          <h2 id="gal-title">Din salon</h2>
-        </div>
-        <div class="g-brand">
-          <img class="g-logo" src="assets/logo-4men.png" alt="Logo 4MEN" width="46" height="46" loading="lazy">
-          <div>
-            <b>@4men.studio</b>
-            <p>107 postări · 3.102 urmăritori</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="c-wrap reveal" id="carousel" role="group" aria-roledescription="carusel" aria-label="Poze din salon, se schimbă automat">
-        <div class="c-track" id="gallery">
-          <button class="gtile g-slide" type="button" data-caption="More than a haircut." aria-label="Deschide poza 1">
-            <img src="assets/gallery/g2.jpg" alt="Detaliu de tundere cu mașina, în salonul 4MEN Lujerului" width="1000" height="1250" decoding="async" style="object-position:50% 34%">
-            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
-          </button>
-          <button class="gtile g-slide" type="button" data-caption="Sunt frizer. E o meserie ușoară." aria-label="Deschide poza 2">
-            <img src="assets/gallery/g3.jpg" alt="Frizer lucrând la scaun, în salonul 4MEN Lujerului" width="720" height="1280" decoding="async" style="object-position:50% 35%">
-            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
-          </button>
-          <button class="gtile g-slide" type="button" data-caption="Kind of cool to know your barber." aria-label="Deschide poza 3">
-            <img src="assets/gallery/g1.jpg" alt="Portret cu tuns și barbă lucrate în salonul 4MEN Lujerului" width="1000" height="1000" decoding="async">
-            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
-          </button>
-          <button class="gtile g-slide g-slide--fit" type="button" data-caption="Fresh fade de Halloween." aria-label="Deschide poza 4">
-            <img src="assets/gallery/g4.jpg" alt="Postare de Halloween 4MEN: Fresh fade" width="1000" height="1000" decoding="async">
-            <span class="c-mark"><img src="assets/logo-4men.png" alt="" width="26" height="26">@4men.studio</span>
-          </button>
-        </div>
-
-        <button class="icon-btn c-nav c-prev" id="c-prev" type="button" aria-label="Poza anterioară">&#8249;</button>
-        <button class="icon-btn c-nav c-next" id="c-next" type="button" aria-label="Poza următoare">&#8250;</button>
-
-        <div class="c-ui">
-          <div class="c-dots" id="c-dots" role="tablist" aria-label="Alege poza"></div>
-          <span class="c-count" id="c-count" aria-live="polite">1 / 4</span>
-        </div>
-        <span class="c-bar" id="c-bar" aria-hidden="true"></span>
-      </div>
-
-      <div class="gallery-foot reveal">
-        <a class="btn btn--solid" href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">Vezi tot pe Instagram</a>
-        <p class="muted">Se schimbă automat · pauză când treci cu mouse-ul</p>
-      </div>
-    </div>
-  </section>
-
   <!-- SOCIAL -->
   <section id="social" aria-labelledby="social-title">
     <div class="wrap">
@@ -571,6 +607,7 @@
   </div>
 </footer>
 
+<div class="mobile-booking"><a class="mobile-call" href="tel:+40728029916" aria-label="Sună la 4MEN">Sună</a><a class="btn btn--solid" href="https://mero.ro/p/4men" target="_blank" rel="noopener">Programează-te <span aria-hidden="true">↗</span></a></div>
 <!-- LIGHTBOX -->
 <div class="overlay" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Galerie foto 4MEN">
   <button class="icon-btn lb-close" id="lb-close" type="button" aria-label="Închide">&#10005;</button>
@@ -590,7 +627,7 @@
       <div class="ig-avatar" aria-hidden="true"><span>4M</span></div>
       <div>
         <h3>4MEN</h3>
-        <p><a href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">@4men.studio</a> · 3.102 urmăritori · 107 postări</p>
+        <p><a href="https://www.instagram.com/4men.studio/" target="_blank" rel="noopener">@4men.studio</a></p>
       </div>
       <button class="icon-btn" id="ig-close" type="button" aria-label="Închide">&#10005;</button>
     </div>
@@ -640,72 +677,15 @@ const SOCIAL = {
     }
   });
 
-  // --- carusel galerie ---
-  (function initCarousel() {
-    const wrap = document.getElementById("carousel");
-    const track = document.getElementById("gallery");
-    if (!wrap || !track) return;
-    const slides = Array.from(track.querySelectorAll(".g-slide"));
-    const dotsBox = document.getElementById("c-dots");
-    const countEl = document.getElementById("c-count");
-    const bar = document.getElementById("c-bar");
-    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
-    let i = 0, timer = null;
-
-    const dots = slides.map((_, n) => {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "c-dot";
-      b.setAttribute("role", "tab");
-      b.setAttribute("aria-label", "Poza " + (n + 1));
-      b.addEventListener("click", () => { go(n); start(); });
-      dotsBox.appendChild(b);
-      return b;
+  // Manual gallery: swipe, keyboard focus, or previous/next controls.
+  const galleryTrack = document.getElementById("gallery");
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  ["c-prev", "c-next"].forEach((id, i) => {
+    document.getElementById(id).addEventListener("click", () => {
+      galleryTrack.scrollBy({left: (i ? 1 : -1) * galleryTrack.clientWidth * 0.85,
+        behavior: reduceMotion.matches ? "auto" : "smooth"});
     });
-
-    function paint() {
-      dots.forEach((d, n) => d.setAttribute("aria-current", String(n === i)));
-      countEl.textContent = (i + 1) + " / " + slides.length;
-    }
-    function go(n, smooth = true) {
-      i = (n + slides.length) % slides.length;
-      track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: (smooth && !reduce.matches) ? "smooth" : "auto" });
-      paint();
-    }
-    function start() {
-      stop();
-      if (reduce.matches) return;
-      timer = setInterval(() => go(i + 1), 5200);
-      bar.classList.remove("run");
-      void bar.offsetWidth;
-      bar.classList.add("run");
-    }
-    function stop() {
-      clearInterval(timer); timer = null;
-      bar.classList.remove("run");
-    }
-
-    document.getElementById("c-prev").addEventListener("click", () => { go(i - 1); start(); });
-    document.getElementById("c-next").addEventListener("click", () => { go(i + 1); start(); });
-    wrap.addEventListener("pointerenter", stop);
-    wrap.addEventListener("pointerleave", start);
-    wrap.addEventListener("focusin", stop);
-    wrap.addEventListener("focusout", start);
-    document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
-    reduce.addEventListener("change", () => { go(i, false); start(); });
-
-    let raf = 0;
-    track.addEventListener("scroll", () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const n = Math.round(track.scrollLeft / Math.max(1, track.clientWidth));
-        if (n !== i && n >= 0 && n < slides.length) { i = n; paint(); }
-      });
-    }, { passive: true });
-
-    paint();
-    start();
-  })();
+  });
 
   // --- galerie, lightbox și pop-up Instagram ---
   const tiles = Array.from(document.querySelectorAll("#gallery .gtile"));
@@ -714,7 +694,7 @@ const SOCIAL = {
   const lbCap = document.getElementById("lb-cap");
   const lbCount = document.getElementById("lb-count");
   const igModal = document.getElementById("ig-modal");
-  let idx = 0;
+  let idx = 0, lastFocus = null;
 
   function renderLb(i) {
     if (!tiles.length) return;
@@ -726,6 +706,7 @@ const SOCIAL = {
     lbCount.textContent = (idx + 1) + " / " + tiles.length;
   }
   function openLb(i) {
+    lastFocus = document.activeElement;
     renderLb(i);
     lb.hidden = false;
     document.body.style.overflow = "hidden";
@@ -734,6 +715,7 @@ const SOCIAL = {
   function closeLb() {
     lb.hidden = true;
     document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
   }
   function openIg() {
     igModal.hidden = false;
@@ -772,12 +754,18 @@ const SOCIAL = {
     lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
 
     const igCard = document.getElementById("soc-instagram");
-    if (igCard) igCard.addEventListener("click", (e) => { e.preventDefault(); openIg(); });
+    // Instagram opens the real profile directly.
     document.getElementById("ig-close").addEventListener("click", closeIg);
     igModal.addEventListener("click", (e) => { if (e.target === igModal) closeIg(); });
 
     document.addEventListener("keydown", (e) => {
       if (!lb.hidden) {
+        if (e.key === "Tab") {
+          const controls = Array.from(lb.querySelectorAll("button"));
+          const first = controls[0], last = controls[controls.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
         if (e.key === "Escape") closeLb();
         if (e.key === "ArrowLeft") renderLb(idx - 1);
         if (e.key === "ArrowRight") renderLb(idx + 1);
@@ -884,7 +872,6 @@ const SOCIAL = {
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"12:00","closes":"21:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"17:00"}
   ],
-  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.97","reviewCount":"797","bestRating":"5"},
   "sameAs": [
     "https://mero.ro/p/4men",
     "https://www.instagram.com/4men.studio/",
